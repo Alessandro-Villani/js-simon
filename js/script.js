@@ -37,13 +37,17 @@ const timer = setInterval(() => {
     console.log(dateDifference);
 
     //Convert date in time units
-    const daysLeft = Math.floor(dateDifference / msToDays);
+    let daysLeft = Math.floor(dateDifference / msToDays);
+    daysLeft = daysLeft < 10 ? "0" + daysLeft : daysLeft;
     console.log('days ' + daysLeft);
-    const hoursLeft = Math.floor((dateDifference % msToDays) / msToHours);
+    let hoursLeft = Math.floor((dateDifference % msToDays) / msToHours);
+    hoursLeft = hoursLeft < 10 ? "0" + hoursLeft : hoursLeft;
     console.log('hours ' + hoursLeft);
-    const minutesLeft = Math.floor((dateDifference % msToHours) / msToMinutes);
+    let minutesLeft = Math.floor((dateDifference % msToHours) / msToMinutes);
+    minutesLeft = minutesLeft < 10 ? "0" + minutesLeft : minutesLeft;
     console.log('minutes ' + minutesLeft);
-    const secondsLeft = Math.floor((dateDifference % msToMinutes) / msToSeconds);
+    let secondsLeft = Math.floor((dateDifference % msToMinutes) / msToSeconds);
+    secondsLeft = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
     console.log('seconds ' + secondsLeft);
 
     //Set clear interval
